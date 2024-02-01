@@ -23,12 +23,24 @@ public class PersonneController {
     public String personnes(Model model){
 
         List<Personne> personnes = new ArrayList<>();
-        personnes.add(new Personne("James", "Bond"));
-        personnes.add(new Personne("JC", "Dominguez"));
-        personnes.add(new Personne("Marie", "Dupond"));
+        personnes.add(new Personne("James", "Bond", 33));
+        personnes.add(new Personne("JC", "Dominguez", 25));
+        personnes.add(new Personne("Marie", "Dupond", 17));
 
         model.addAttribute("listePersonnes", personnes);
 
         return "personnes"; // personnes.html
     }
+
+    @GetMapping("agepersonne")
+    public String agePersonne(Model model){
+
+        //model.addAttribute("personne", new Personne("James", "Bond", 33));
+        model.addAttribute("personne",
+                new Personne("Marie", "Dupond", 17));
+
+        return "agepersonne.html";
+    }
+
+
 }
