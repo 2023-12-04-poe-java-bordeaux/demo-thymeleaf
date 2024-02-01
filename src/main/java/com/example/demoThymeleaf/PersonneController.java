@@ -3,6 +3,7 @@ package com.example.demoThymeleaf;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,5 +43,19 @@ public class PersonneController {
         return "agepersonne.html";
     }
 
+
+
+     /**** FORM */
+    @GetMapping("personne-form")
+    public String getForm(){
+
+        return "formulaire.html";
+    }
+
+    @PostMapping("personnes")
+    public void formulaire(Personne personne){
+        System.out.println(personne);
+    }
+    /**** FORM */
 
 }
